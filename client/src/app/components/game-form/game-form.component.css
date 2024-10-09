@@ -1,0 +1,9 @@
+/* Add these styles to your component's CSS file or your global styles */
+
+.leaflet-map {
+    height: 500px; /* Adjust the height as needed */
+    width: 100%;   /* Make the map container take the full width of its parent */
+    border: 1px solid #ccc; /* Add a border for better visibility */
+    margin-top: 20px; /* Add some top margin for spacing */
+  }
+  

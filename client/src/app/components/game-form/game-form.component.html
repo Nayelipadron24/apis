@@ -1,0 +1,101 @@
+<app-navigation></app-navigation>
+<script src="//code.tidio.co/r903mxkcybevihheldrmdgjuorbydghu.js" async></script>
+
+<body>
+  <div class="container">
+    <br>
+    <li class="my-15 btn btn-danger">
+      <a class="text-center border-none outline-none text-white dropdown-toggle d-flex align-items-center"
+        type="button" id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+        href="/home/home">
+        <i class="fab fa-youtube me-2"></i>
+        <span class="font-weight-bold">
+          <span type="button" class="btn text-white font-weight-bold">Videos</span>
+        </span>
+      </a>
+    </li>
+
+    <br>
+    <br>
+    <h1 class="text-center font-weight mb-4 text-black"
+      style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Tabla de actividades</h1> <br>
+
+
+    <div class="container">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Actividad</th>
+            <th>Descripción</th>
+            <th>Encargado</th>
+            <th>Participantes</th>
+            <th>Estatus</th>
+            <th>Fecha de inicio</th>
+            <th>Fecha de fin</th>
+            <th>Lugar</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of act">
+            <td>{{item.Nombre_Actividad}}</td>
+            <td>{{item.Descripcion}}</td>
+            <td>{{item.Encargado}}</td>
+            <td>{{item.Participante}}</td>
+            <td>{{item.Estatus}}</td>
+            <td>{{item.Fecha_de_inicio | date: 'yyyy-MM-dd'}}</td>
+            <td>{{item.Fecha_de_fin | date: 'yyyy-MM-dd'}}</td>
+            <td>{{item.Lugar}}</td>
+            <td>
+              <a [routerLink]="['/edit', item.idActividad]" (click)="editact(item.idActividad)" type="button"
+                class="btn btn-primary">Modificar</a>
+            </td>
+            <td><button class="btn btn-danger " (click)="cancelar(item.idActividad)">Cancelar</button></td>
+            <td><button class="btn btn-dark" (click)="generarRuta(item.Lugar)">Ruta</button></td>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="container">
+      <div class="d-flex justify-content-end">
+        <button class="btn btn-outline-primary" type="button" routerLink="/add"
+          style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Agregar actividad</button>
+      </div>
+      <br>
+      <br>
+
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    </div>
+
+    <br>
+
+    <div #map class="leaflet-map"></div>
+
+    <br>
+
+    <hr style="border: 1px solid grey;">
+
+    <div style="background-color: #02338f; border-radius: 10px; padding: 20px;">
+      <div style="text-align: left; padding: 10px; border-radius: 5px; background-color: #012169; color: white;">
+        <h4 class="font-weight-bold"
+          style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Pagos con PayPal</h4>
+      </div>
+      <br>
+      <p style="color: grey; text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: aliceblue;">
+        Ingresa la cantidad que deseas donar y, al acceder directamente a tu cuenta de PayPal, podrás hacer la contribución.
+        ¡Gracias por tu apoyo!</p>
+
+      <div class="text-center">
+        <input [(ngModel)]="inputValue" placeholder="Ingresa una cantidad" class="form-control-sm">
+        <br>
+        <button (click)="mostrarValor()" class="btn btn-dark btn-rounded">Confirmar</button>
+      </div>
+      <br>
+      <div class="d-grid gap-2 col-6 mx-auto" #paypal></div>
+
+    </div>
+    <br>
+    <br>
+
+  </div>
+</body>

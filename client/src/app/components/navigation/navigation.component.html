@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha384-GLhlTQ8iK26CkvaqNX5+9C2ZqOWl1/GpDzukfO5g53gxpANDA/JjLG2LbP2RSR" crossorigin="anonymous">
+</head>
+
+<body>
+    <div>
+        <div class="header-blue">
+            <nav class="navbar navbar-dark navbar-expand-md navigation-clean-search">
+                <div class="container">
+                    <a class="navbar-brand" routerLink="/gestion">ActiPro</a>
+                    <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    
+                    <div class="collapse navbar-collapse" id="navcol-1">
+                        <form class="form-inline mr-auto" target="_self">
+                            <div class="form-group">
+                                <label for="search-field"><i class="fa fa-search"></i></label>
+                                <input class="form-control search-field" type="search" name="search" id="search-field">
+                            </div>
+                            
+                        </form>
+                        
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item my-sm my-1 ml-3">
+                            <span class="navbar-text ml-2">
+                                <a routerLink="/hist-act" class="btn btn-light text-black mr-2" role="button" >Historial Actividades</a>
+                            </span> 
+                                <a class="btn btn-light action-button" routerLink="/user" role="button">{{usuarios.nombre}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</body>
+
+</html>

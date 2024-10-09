@@ -1,0 +1,38 @@
+<app-navigation></app-navigation>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card" *ngIf="usuarios">
+                <div class="card-header mi-bg-color text-white">
+                    <h4>Mi Perfil</h4>
+                </div>
+                <div class="card-body">
+                    <button class="btn btn-outline-primary btn-sm float-right" [routerLink]="['/edituser', usuarios.idUsuario]" >Editar</button> <!-- Botón de edición -->
+                    <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <p id="nombre">{{usuarios.nombre}}</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="correo">Correo Electrónico:</label>
+                        <p id="correo">{{usuarios.correo}}</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono:</label>
+                        <p id="telefono">{{usuarios.telefono}}</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="nombreRol">Rol:</label>
+                        <p id="nombreRol">{{usuarios.nombreRol}}</p>
+                    </div>
+                    <button class="btn btn-danger" (click)="logOut()">Cerrar Sesión</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="display: flex; justify-content: center; align-items: center; height: 10vh;">
+        <div class="button">
+            <button class="btn btn-primary" type="button"><a href="/zoom" style="color: white; text-decoration: none;">Videllamadas</a></button>
+        </div>
+    </div>
+    
+</div>

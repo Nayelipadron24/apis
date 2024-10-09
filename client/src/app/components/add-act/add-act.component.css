@@ -1,0 +1,36 @@
+.calendar-container {
+    max-width: 300px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+  }
+  .calendar h4 {
+    text-align: center;
+  }
+  .calendar .month {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .calendar .days li {
+    list-style-type: none;
+    display: inline-block;
+    width: 14.28%;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+  .calendar .days li:hover {
+    background-color: #eee;
+  }
+  .calendar .days li.prev-month,
+  .calendar .days li.next-month {
+    color: #ccc;
+  }
+  .calendar .days li.current-day {
+    background-color: #337ab7;
+    color: #fff;
+    font-weight: bold;
+  }
+
+
+  #map { height: 100vh; }

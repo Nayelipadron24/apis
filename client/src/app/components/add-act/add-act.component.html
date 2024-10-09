@@ -1,0 +1,127 @@
+<app-navigation></app-navigation>
+<div class="container">
+      <div class="">
+      </div>
+      <p></p>
+      <div class="container">
+        <h2>Agregar Actividad</h2>
+        <br>
+        <div class="row">
+          <div class="col-md-6">
+            <form>
+              <div class="mb-3">
+                <label for="actividad" class="form-label">Actividad:</label>
+                <input type="text" class="form-control" name="actividad" [(ngModel)]="activities.Nombre_Actividad">
+              </div>
+              <div class="mb-3">
+                <label for="descripcion" class="form-label">Descripción:</label>
+                <textarea  class="form-control" name="descripcion" [(ngModel)]="activities.Descripcion" rows="2" ></textarea>
+              </div>
+              <div class="form-group">
+                <label for="estatus">Encargado:</label>
+                <select class="form-control" id="estatus" name="encargado" [(ngModel)]="activities.Encargado"  > 
+                  <option value="">Elige Una Opcion</option>
+                  <option *ngFor ="let item of Enc" value="{{item.idUsuario}}">{{item.nombre}}</option>
+                </select>
+              </div>              
+              <div class="form-group">
+                <label for="estatus">Participante:</label>
+                <select class="form-control" id="estatus" name="participante" [(ngModel)]="activities.Participante" >
+                  <option value="">Elige Una Opcion</option>
+                  <option *ngFor ="let item1 of Par" value="{{item1.idUsuario}}">{{item1.nombre}}</option>
+                </select>
+              </div>
+              
+              <div class="mb-3">
+                <label for="fechaInicio" class="form-label">Fecha de Inicio:</label>
+                <input type="date" class="form-control" name="fechaini"[(ngModel)]="activities.Fecha_de_inicio " >
+              </div>
+              <div class="mb-3">
+                <label for="fechaFin" class="form-label">Fecha de Fin:</label>
+                <input type="date" class="form-control" name="fechafin" [(ngModel)]="activities.Fecha_de_fin"  >
+                <div class="form-group" id="Estatus">
+                  <label for="estatus" style="margin-top: 20px;">Estatus:</label>
+                  <select class="form-control" [(ngModel)]="activities.Estatus" [ngModelOptions]="{ standalone: true }"  >
+                    <option value="">Elige una opción</option>
+                    <option *ngFor ="let item2 of Est" name="estatus">{{item2.nombreEstatus}}</option>
+                  </select>
+                </div>                           
+              </div>
+              <div class="mb-3">
+                <label for="lugar" class="form-label">Lugar:</label>
+                <input  class="form-control" name="lugar" [(ngModel)]="activities.Lugar" rows="2">
+              </div>   
+            </form>
+          </div>
+          <div class="col-md-6">
+            <div class="calendar-container">
+              <div class="calendar">
+                <h4>Octubre 2023</h4>
+                <ul class="list-unstyled days">
+                  <li>D</li>
+                  <li>L</li>
+                  <li>M</li>
+                  <li>M</li>
+                  <li>J</li>
+                  <li>V</li>
+                  <li>S</li>
+                </ul>
+                <ul class="list-unstyled days">
+                  <li class="prev-month">24</li>
+                  <li class="prev-month">25</li>
+                  <li class="prev-month">26</li>
+                  <li class="prev-month">27</li>
+                  <li class="prev-month">28</li>
+                  <li class="prev-month">29</li>
+                  <li class="prev-month">30</li>
+                  <li>1</li>
+                  <li>2</li>
+                  <li>3</li>
+                  <li>4</li>
+                  <li>5</li>
+                  <li>6</li>
+                  <li>7</li>
+                  <li>8</li>
+                  <li>9</li>
+                  <li>10</li>
+                  <li>11</li>
+                  <li>12</li>
+                  <li>13</li>
+                  <li>14</li>
+                  <li>15</li>
+                  <li>16</li>
+                  <li>17</li>
+                  <li>18</li>
+                  <li>19</li>
+                  <li>20</li>
+                  <li>21</li>
+                  <li>22</li>
+                  <li>23</li>
+                  <li>24</li>
+                  <li>25</li>
+                  <li>26</li>
+                  <li>27</li>
+                  <li>28</li>
+                  <li>29</li>
+                  <li>30</li>
+                  <li>31</li>
+                  <li class="next-month">1</li>
+                  <li class="next-month">2</li>
+                  <li class="next-month">3</li>
+                  <li class="next-month">4</li>
+                </ul>
+              </div>
+            </div>            
+          </div>
+          <div class="form-group" style="margin-top: 20px;">
+            <div class="mt-3"></div>
+             <h3 class="titulo">Mapa</h3>
+             <button class="btn btn-outline-success mr-2" (click)="ubicar()">Geolocalizar</button>
+             <button class="btn btn-outline-warning float-right" (click)="recargar()">Recargar</button>
+         </div>
+         <hr>
+         <div id="map"></div>
+         </div>
+         <button (click)="edit ? updateAct() : savenewactividad()" type="submit" class="btn btn-primary" style="margin-top: 20px;">Guardar actividad</button>
+        </div>
+      </div>

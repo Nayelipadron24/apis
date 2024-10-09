@@ -1,0 +1,8 @@
+<div id="jitsi-iframe" style="height: 100%; width: 100%;"></div>
+
+<div class="item-center" style="height: 100%; width: 100%;">
+    <i (click)="executeCommand('toggleAudio')" class="fas fa-2x grey-color" [ngClass]="isAudioMuted ? 'fa-microphone' : 'fa-microphone'" aria-hidden="true" title="Mute / Unmute"></i>
+    <i (click)="executeCommand('hangup')" class="fas fa-phone-slash fa-2x red-color" aria-hidden="true" title="Leave"></i>
+    <i (click)="executeCommand('toggleVideo')" class="fas fa-2x grey-color" [ngClass]="isVideoMuted ? 'fa-video-slash' : 'fa-video'" aria-hidden="true" title="Start / Stop camera"></i>
+    <i (click)="executeCommand('toggleShareScreen')" class="fas fa-film fa-2x grey-color" aria-hidden="true" title="Share your screen"></i>
+</div>

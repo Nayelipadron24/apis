@@ -1,0 +1,45 @@
+<app-navigation></app-navigation>
+<div class="container">
+
+    <br>
+    <h2 class="text-center font-weight mb-4 text-black" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Historial de actividades</h2>
+
+    <br>
+    <table class="table">
+        <thead class="table table-striped">
+            <tr>
+                <th>Actividad</th>
+                <th>Descripción</th>
+                <th>Encargado</th>
+                <th>Participantes</th>
+                <th>Fecha de inicio</th>
+                <th>Fecha de fin</th>
+                <th>Estatus</th>
+                <th>Lugar</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of act">
+                <td >{{item.Nombre_Actividad}}</td>
+             <td>{{item.Descripcion}}</td>
+              <td>{{item.Encargado}}</td>
+              <td>{{item.Participante}}</td>
+              <td>{{item.Fecha_de_inicio | date: 'yyyy-MM-dd'}}</td>
+              <td>{{item.Fecha_de_fin | date: 'yyyy-MM-dd'}}</td>
+              <td>{{item.Estatus}}</td>
+              <td>{{item.Lugar}}</td>
+
+           
+            <!-- Agregar más filas según sea necesario -->
+        </tbody>
+    </table>
+    <div class="d-flex justify-content-end mt-3">
+        <button type="button" class="btn btn-primary" routerLink="/gestion" >Listo</button>
+      </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+

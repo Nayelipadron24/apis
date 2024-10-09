@@ -1,0 +1,24 @@
+<app-navigation></app-navigation>
+
+<div class="row header-blue">
+  <div class="col-md-2 text-center"></div>
+  
+  <div class="col-md-10">  
+    <h2 class="text-center font-weight-bold mb-4 text-white">Recursos para Aprender Inglés con Videos</h2>
+    <p class="text-center font-weight-bold mb-4 text-white">Descubre videos educativos para aprender inglés de forma efectiva. Recomendaciones y recursos para mejorar tus habilidades en inglés.</p>
+    
+    <div class="video-player-container">
+      <div id="video-container" class="video-player" #videoContainer></div>
+    </div>  
+    
+    <div class="video-list justify-content-end">
+      <div *ngFor="let video of videos" class="video-item" (click)="playVideo(video.id.videoId)">
+        <img [src]="'https://img.youtube.com/vi/' + video.id.videoId + '/hqdefault.jpg'" alt="Video Thumbnail" class="img-thumbnail">
+        <div class="video-info">
+          <h3>{{ video.snippet.title }}</h3>
+          <p>{{ video.snippet.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
